@@ -1,0 +1,45 @@
+Document: D6010-en.pdf
+
+Summary: The HAWE Hydraulik radial piston pump type R, RG is a versatile, valve-controlled pump designed for hydraulic applications requiring high pressure and constant flow rates, available in various configurations and materials for different operating conditions.
+
+
+Document: D6020-en.pdf
+
+Summary: The FXU is a highly configurable hydraulic power pack designed for continuous operation with options for radial piston, external gear, or dual-stage pumps, aluminum or steel tanks, and various accessories for monitoring and valve mounting.
+
+
+Document: D6025-en.pdf
+
+Summary: The Mini Hydraulic Power Pack Type A is a compact, modular hydraulic power unit designed for supplying hydraulic oil in systems, featuring various configurations for DC and AC power, tank sizes, and pump options.
+
+
+Document: D6418-en.pdf
+
+Summary: The POH and PIH series are proportional 4/3-way directional spool valves used to control the direction and velocity of hydraulic consumers in industrial applications.
+
+
+Document: D7280-en.pdf
+
+Summary: This document specifies the HAWE Hydraulik LP series, which are air-driven hydraulic pumps and power packs designed to amplify pressure for various applications.
+
+
+Document: D7451_CWPN-en.pdf
+
+Summary: The HAWE Hydraulik CWPN is a directly actuated, manifold mounting, 4/3- or 4/2-way directional spool valve with a standard NG 6 (CETOP 03) connection pattern, capable of handling pressures up to 350 bar and flow rates up to 60 l/min.
+
+
+Document: D7918VIC-en.pdf
+
+Summary: The CLHV-C is a screw-in load-holding valve designed to prevent uncontrolled load drops in hydraulic cylinders or motors, offering pressure settings up to 350 bar and flow rates up to 320 lpm.
+
+
+Document: D7961_K_DIN-en.pdf
+
+Summary: The HAWE K61N-DIN is a fixed displacement axial piston pump designed for open circuits in commercial vehicle power take-offs, delivering constant flow at up to 400 bar.
+
+
+Document: D7964-en.pdf
+
+Summary: The HAWE C40V is a variable displacement axial piston pump designed for open circuits in mobile hydraulics, featuring multiple controller options, thru-shaft compatibility, and a compact design.
+
+

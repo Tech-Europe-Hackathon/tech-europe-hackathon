@@ -47,18 +47,30 @@ def create_summary(document_text, model):
     summary = qa(prompt, model)
     return summary
 
+def create_summary_short(document_text, model):
+    prompt = ("The following document is a product specification. Please create a"
+              "one-line description of the product.\n"
+             "Document: "
+             f"{document_text}")
+    summary = qa(prompt, model)
+    return summary
 
-def make_and_save_summaries():
+def make_and_save_summaries(summary_fct, output_file="summaries.txt"):
     model = setup_gemini_model()
     results = ""
     for f in os.listdir("documents"):
         if f.endswith(".pdf"):
             document_text = load_document(f)
-            summary = create_summary(document_text, model)
+            summary = summary_fct(document_text, model)
             results += f"""Document: {f}\n
 Summary: {summary}\n\n"""
-    with open("summaries.txt", "w", encoding="utf-8") as f:
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(results)
 
+def make_and_save_summaries_short():
+    make_and_save_summaries(create_summary_short, "summaries_short.txt")
+
+
 if __name__ == "__main__":
-    make_and_save_summaries()
+    #print(create_summary_short(load_document("D6010-en.pdf"), setup_gemini_model()))
+    make_and_save_summaries_short()
