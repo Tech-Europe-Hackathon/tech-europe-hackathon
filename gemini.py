@@ -1,12 +1,8 @@
 import google.generativeai as genai
-import subprocess
-import os
+import pathlib
 
-# API konfigurieren (ersetze durch deinen API-Key)
+# Gemini API konfigurieren (ersetze mit deinem API-Key)
 genai.configure(api_key="AIzaSyDokn1k6Ij48FLTg5bQauestOvumCXM19g")
-
-# Wähle ein geeignetes Modell aus
-model = genai.GenerativeModel("gemini-2.0-flash")
 
 # Produktzusammenfassungen
 document_summaries = {
@@ -14,14 +10,13 @@ document_summaries = {
     "1.1.2": "Enhanced high-pressure valve with improved sealing.",
     "1.1.3": "High-pressure valve designed for extreme temperatures.",
     "1.2.1": "Low-pressure valve for standard water systems.",
-    # ggf. weitere Zusammenfassungen hinzufügen
 }
 
-def generate_response(user_query: str) -> str:
-    # Vorbereiten des Prompts
+# Schritt 1: Erhalte relevante Dokument-ID
+def get_document_id(user_query: str) -> str:
     summaries_text = "\n".join([f"{k}: {v}" for k, v in document_summaries.items()])
     prompt = f"""
-    You are a B2B sales agent. Based on the customer's inquiry, choose the most relevant product ID from the provided summaries.
+    You are a B2B sales agent. Given the summaries below, select the most relevant product ID for the customer's inquiry.
 
     Summaries:
     {summaries_text}
@@ -31,31 +26,50 @@ def generate_response(user_query: str) -> str:
 
     Reply ONLY with the relevant product ID.
     """
-
-    # Modell-Abfrage
     response = model.generate_content(prompt)
     return response.text.strip()
 
-def load_document(document_id: str):
-    pdf_path = f"documents/{document_id}.pdf"
+# Schritt 2: PDF-Datei laden und zusammenfassen mit Gemini
+def generate_detailed_response(pdf_path: str, user_query: str) -> str:
+    try:
+        pdf_data = pathlib.Path(pdf_path).read_bytes()
 
-    if os.path.exists(pdf_path):
-        # Prüfen ob pdftotext installiert ist
-        try:
-            subprocess.run(['pdftotext', pdf_path, '-'], check=True)
-        except FileNotFoundError:
-            print("pdftotext ist nicht installiert. Installiere es mit 'brew install poppler'.")
-        except subprocess.CalledProcessError as e:
-            print("Fehler beim Lesen des PDFs:", e)
-    else:
-        print(f"Die Datei {pdf_path} existiert nicht.")
+        prompt = f"""
+            You are a professional B2B sales agent. Provide a concise, detailed answer directly addressing the customer's inquiry below, focusing exclusively on relevant details. 
 
+            Customer Inquiry:
+            "{user_query}"
+        """
 
-# Beispiel-Anfrage:
+        response = model.generate_content(
+            contents=[
+                {
+                    "mime_type": "application/pdf",
+                    "data": pdf_data
+                },
+                prompt
+            ]
+        )
+        return response.text.strip()
+    except FileNotFoundError:
+        return f"PDF file {pdf_path} not found."
+    except Exception as e:
+        return f"Error processing PDF: {e}"
+
+# Modell-Initialisierung
+model = genai.GenerativeModel("gemini-2.0-flash")
+
+# Kundenanfrage
 user_query = "We need a high-pressure valve that can withstand extreme temperatures."
-relevant_document_id = generate_response(user_query)
 
-print("Relevant Document ID:", relevant_document_id)
+# Schritt 1: ID erhalten
+document_id = get_document_id(user_query)
+print(f"Relevant Document ID: {document_id}")
 
-print("\n--- Dokumentinhalt ---")
-load_document(relevant_document_id)
+# Schritt 2: PDF laden
+pdf_file_path = pathlib.Path(f"documents/{document_id}.pdf")
+
+# Schritt 3: Zusammenfassung generieren und ausgeben
+summary = generate_detailed_response(pdf_path=pdf_file_path, user_query=user_query)
+print("Antwort:")
+print(summary)
