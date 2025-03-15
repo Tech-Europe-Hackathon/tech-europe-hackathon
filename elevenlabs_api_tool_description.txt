@@ -28,14 +28,3 @@ The file system looks like this:
 
 3.1 - Plastic Screws
 ...
-
-----------------------
-A request should look like this where x.x is the required document:
-
-html request blabla x.x
-
-Example request for hpv 2:
-
-html request blabla 1.2
-
----------------------
