@@ -45,7 +45,8 @@ def generate_detailed_response(pdf_path: str, user_query: str) -> str:
         pdf_data = pathlib.Path(pdf_path).read_bytes()
 
         prompt = f"""
-            You are a professional B2B sales agent. Provide a concise, detailed answer directly addressing the customer's inquiry below, focusing exclusively on relevant details. 
+            You are a professional B2B sales agent. Provide a concise, detailed answer directly addressing the customer's inquiry below, focusing exclusively on relevant details.
+            Talk naturally and informatively, as if you were speaking to a customer. Don't mention that you have a PDF document. First start by introducing the product, then provide detailed information about its features and benefits.
 
             Customer Inquiry:
             "{user_query}"
