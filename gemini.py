@@ -11,7 +11,7 @@ print("Available models:", model_names)
 
 # Select an appropriate model that supports function calling
 # Note: Model naming might be "models/gemini-1.5-pro" or similar
-model_name = "gemini-1.5-pro"  # Use the appropriate model from the list above
+model_name = "gemini-2.0-flash"  # Use the appropriate model from the list above
 
 document_summaries = {
     "1.1.1": "Summary of hpv 1: High-pressure valve for industrial applications.",
