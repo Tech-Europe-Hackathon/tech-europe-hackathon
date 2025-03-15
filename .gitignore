@@ -1,0 +1,40 @@
+# Ignoriere Python Cache und Bytecode-Dateien
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignoriere virtuelle Umgebungen
+venv/
+.env/
+.virtualenv/
+env/
+
+# Ignoriere API-Keys und sensitive Daten
+.env
+*.apikey
+*.key
+
+# Ignoriere generierte PDF-Texte
+*.txt
+
+# Ignoriere macOS spezifische Dateien
+.DS_Store
+
+# Ignoriere generierte Logs
+*.log
+
+# Ignoriere Google API Credentials (falls vorhanden)
+credentials.json
+token.json
+
+# Sonstiges
+.idea/
+.vscode/
+*.egg-info/
+dist/
+build/
+
+node_modules/
+
+package-lock.json
+package.json
