@@ -1,0 +1,41 @@
+With this tool you can access the specific product documents.
+The file system looks like this:
+1 - Valves
+2 - Pipes
+3 - Screws
+
+1.1 - High Pressure Valves
+1.1.1 - hpv 1
+    summary hpv 1: {}
+1.1.2 - hpv 2
+    summary hpv 2: {}
+1.1.3 - hpv 3
+    summary hpv 3: {}
+
+1.2 - Low Pressure Valves
+1.2.1 lpv 1
+    summary lpv 1: {}
+...
+
+2.1 - Water Pipes
+...
+
+2.2 - Gas Pipes
+...
+
+3.1 - Metal Screws
+...
+
+3.1 - Plastic Screws
+...
+
+----------------------
+A request should look like this where x.x is the required document:
+
+html request blabla x.x
+
+Example request for hpv 2:
+
+html request blabla 1.2
+
+---------------------
