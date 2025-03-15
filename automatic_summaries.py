@@ -36,7 +36,7 @@ def load_document(f):
         content += page.extract_text()
     return content
             
-def create_summary(document_text, model):
+def create_comprehensive_summary(document_text, model):
     prompt = (f"The following document is a product specification. Please make" 
              f" a summary of the document. Please make a summary that includes"
              f"all the key features of the product, such that when one wants to"
@@ -70,7 +70,15 @@ Summary: {summary}\n\n"""
 def make_and_save_summaries_short():
     make_and_save_summaries(create_summary_short, "summaries_short.txt")
 
+def make_and_save_summaries_separate_files():
+    model = setup_gemini_model()
+    for f in os.listdir("documents"):
+        if f.endswith(".pdf"):
+            document_text = load_document(f)
+            summary = create_comprehensive_summary(document_text, model)
+            with open(f.replace(".pdf", ".txt"), "w", encoding="utf-8") as f:
+                f.write(summary)
 
 if __name__ == "__main__":
     #print(create_summary_short(load_document("D6010-en.pdf"), setup_gemini_model()))
-    make_and_save_summaries_short()
+    make_and_save_summaries_separate_files()
