@@ -1,3 +1,7 @@
+##################
+Tool description:
+##################
+
 With this tool you can access the specific product documents.
 The file system looks like this:
 1 - Valves
@@ -28,3 +32,10 @@ The file system looks like this:
 
 3.1 - Plastic Screws
 ...
+
+##################
+Query parameter description
+##################
+
+Using the provided document structure find the one that is relevant for the current request and use its id for the request.
+For example if you need the details for high pressure valve 1 the document ID is 1.1.1
