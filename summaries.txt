@@ -1,0 +1,419 @@
+Document: D6010-en.pdf
+
+Summary: Here's a summary of the HAWE Hydraulik Radial Piston Pump Type R, RG specification (D 6010) focusing on key features to aid in decision-making:
+
+**Product Overview:**
+
+The HAWE Radial Piston Pump Type R and RG are versatile, valve-controlled pumps designed for use in oil-hydraulic systems, either as standalone motor pumps or integrated within hydraulic power packs.  They provide lubricating hydraulic fluids and generate counter-pressure for hydraulic consumers.
+
+**Key Features:**
+
+*   **High Pressure Capability:**  Maximum operating pressure up to **700 bar**.
+*   **Variable Flow Rates:**  Maximum displacement volume up to **64.18 cm3/rev**, and maximum flow rate up to **91.2 l/min**. Many flow rate options are possible via different configurations.
+*   **Versatile Applications:** Suitable for high-pressure applications needing constant flow, including press construction, fixture design, testing/laboratory equipment, lubrication systems, and agricultural engineering.
+*   **Design:** Radial piston design with cylinders arranged radially, driven by eccentrically fitted bearings on the drive shaft. An uneven number of pistons are used per cylinder radial, in order to minimize the pulsation of the ow rate.
+*   **Multiple Assemblies:** Different assemblies (7631, 6010, 6011, 6012, 6014, 6016) offer varying configurations of cylinders, flow rates, and pressure capabilities.
+*   **Two Main Types (R and RG):**
+    *   **Type R:** Uses roller bearings for eccentric bearings and is suited for lower rotation speeds.
+    *   **Type RG:** Uses plain bearings, providing longer service life in extreme conditions and with media with low lubricity (e.g., HFC).  Not suitable for low rotation speeds.
+*   **Fluid Compatibility:** Designed for hydraulic fluids conforming to DIN 51524 Parts 1-3 (ISO VG 10-68). Also compatible with biologically degradable fluids (HEPG, HEES) and water-based fluids (with specific RG-HFA versions).
+*   **Versions:** Offered in standard series and mounting for charged pumps versions, and hollow shaft versions.
+*   **Seals:** Available with NBR (standard), FKM (VITON), or EPDM seals.
+*   **Optional Features:**  Explosion-proof versions (EX) and hard coat housing (HC) are available.
+*   **Installation:**  Can be mounted in any orientation between horizontal and vertical. Uses pipe thread ISO 228-1 connections.
+*   **Rotation:** The pumps may rotate in any direction.
+*   **Operating Temperatures:** Can operate within an environmental temperature range of approximately -40 to +80 °C, and with a hydraulic fluid temperature range of -25 to +80 °C.
+*   **Filtration:** Requires a cleanliness level as per ISO 4406 (refer to oil recommendation D 5488/1 for specific details).
+
+**Decision-Making Considerations:**
+
+*   **Pressure and Flow Requirements:**  Select an assembly and configuration (number of cylinders, piston diameter) based on the required operating pressure and flow rate for the application.
+*   **Operating Conditions:**
+    *   **Speed:** Type R is better suited for low speeds; RG is better for high speeds and demanding applications. The optimum is around 1450 min-1.
+    *   **Fluid Type:** RG-HFA is needed for water-based fluids.
+    *   **Load Duration:**  Consider using a larger pump with a smaller piston diameter if load duration is high to preserve bearing life.
+*   **Environmental Factors:** Consider temperature ranges, potential for explosive environments, and the need for specialized housing coatings.
+*   **Maintenance:** Regular inspections and fluid cleanliness are crucial for long-term performance.
+
+
+Document: D6020-en.pdf
+
+Summary: Here's a summary of the FXU Hydraulic Power Pack specification, focusing on key features for decision-making:
+
+**Summary of HAWE FXU Hydraulic Power Pack**
+
+The HAWE FXU is a highly configurable hydraulic power pack designed for continuous operation (S1) under constant load. It offers a flexible, modular design adaptable to specific customer needs and is well-suited for applications like machine tools, recycling systems, plastics machinery, and pressing applications.
+
+**Key Features:**
+
+*   **Operating Pressure:** Supports high and low pressure circuits (HP/LP) up to 700/260 bar.
+*   **Geometric Displacement:** Offers a range of displacements (HP/LP: 64.15/87.5 cm3/rev).
+*   **Usable Volume:** Available with different tank sizes, providing a maximum usable volume of 565 liters.
+*   **Motor Power:** Configurable with motors up to 37 kW.
+
+**Pump Options:**
+
+*   **Radial Piston Pumps:** Ideal for high-pressure applications, with flow rates ranging from 1.4 to 91.2 l/min at 1400 min-1.
+*   **External Gear Pumps:** Cost-effective for lower pressure applications, offering lower noise, and flow rates ranging from 5.4 to 82.2 l/min at 1400 min-1.
+*   **Dual-Stage Pumps (Radial Piston + Gear):** Combines high and low-pressure capabilities for efficient operation, with various combinations available.
+
+**Tank Options:**
+
+*   **Material:** Available in aluminum or steel.
+*   **Sizes:** Tank volumes range from 30 to 630 liters.
+*   **Accessories:** Options for feet, oil trays, and drain valves.
+
+**Cooling:**
+
+*   **Heat Exchanger:** Steel tank versions can be equipped with oil-water plate heat exchangers to manage oil temperature (various cooling capacities available).
+
+**Filtration:**
+
+*   **Return Line Filter:** Filters the returning oil flow with options for different filter fineness (6μm, 10μm, 25μm) and flow rates.
+
+**Monitoring:**
+
+*   **Contamination Indicator:** Available with optical or electrical/optical clogging indicators for filter monitoring.
+*   **Level and Temperature Monitoring:** Options for level switches, temperature switches, and IO-Link enabled sensors to detect critical system states.
+
+**Valve Mounting:**
+
+*   Supports direct mounting of HAWE valve banks (seated and spool valves).
+*   Adapters available for various valve types, including proportional directional spool valves (PSL 3).
+
+**Considerations:**
+
+*   Tank size selection should be based on the application's operating mode (continuous vs. intermittent) and flow rate requirements.
+*   Filter fineness should be selected based on the type of valves used in the system (conventional, proportional, or servo).
+*   Electric drive should provide enough power to deliver the correct flow rate and pressure.
+
+This summary should help you quickly assess whether the HAWE FXU hydraulic power pack is a suitable option for your specific application by highlighting its key features and available configurations. Remember to consult the full document for complete details and safety information.
+
+
+Document: D6025-en.pdf
+
+Summary: Here's a summary of the Mini Hydraulic Power Pack Type A product specification, highlighting key features to aid in decision-making:
+
+**Product Overview:**
+
+The HAWE Mini Hydraulic Power Pack Type A is a compact unit designed to supply hydraulic oil in hydraulic systems. It's modular in design, featuring an external gear pump flanged to the equipment rack and a round plastic oil tank with an M14x1.5 filling screw. It is intended for short period operation.
+
+**Key Features & Benefits:**
+
+*   **Compact Design:**  Motor shaft acts as the pump shaft for space efficiency.
+*   **Modular Design:**  Offers flexibility with different equipment racks (Q and H for A 100), allowing for various motor, pump, and tank combinations.  Compatible with Type-TLC and SL valve banks for complete solutions.
+*   **Power Supply Options:** Available in both DC (12V, 24V) and AC (230V) power options.
+*   **Versatile Installation:** Can be installed vertically (tank on top) or horizontally (A 080 only).
+*   **Quiet Operation:**  Typical noise levels range from 55-60 dB(A) (at 1m distance, decoupled attachment).
+*   **Operating Pressure:** Maximum operating pressure is up to 210 bar (depending on the specific model and application; A 065 is limited to 150 bar).
+*   **Flow Rate:**  Maximum flow rate up to 3 l/min.
+*   **Tank Sizes:** Available in different tank sizes, ranging from 0.2 to 1.2 liters (usable volume), depending on the model.
+*   **Fluid Compatibility:** Designed for use with hydraulic fluids according to DIN 51 524 Parts 1 to 3; ISO VG 10 to 68.
+*   **Operating Temperature:** Fluid temperature range from -15 to +80°C (A 080, A100) or -10 to +40°C (A 065); environmental -30 to +80°C (A 080, A100) or -15 to +80°C (A 065).
+*   **Pump Options:** Offers various miniature external gear pumps with displacement volumes from 0.19 to 0.88 cm3/rev.
+*   **Valves**: Lifting version (H) include return throttle and lowering valve(2/2-poppet bypass valve 24 V or 12V)
+
+**Limitations:**
+
+*   **Duty Cycle:**  Suitable for short-period operation.  Duty cycles range from S3-20% to 40%, depending on the motor, flow rate, pressure, and environmental conditions.
+*   **Cleanliness Requirements:** Requires hydraulic fluid cleanliness level of ISO 4406 20/18/15.
+*   **A4D and B2D motor not compatible with smallest tank size**
+
+**Applications:**
+
+Intended for applications such as:
+
+*   Floor-lock systems
+*   Automotive technology
+*   Aviation
+*   Decentralized hydraulic controls
+
+**To Determine Suitability:**
+
+*   **Power Requirements:**  Match the voltage (DC/AC) and power needs to your application.
+*   **Pressure and Flow:** Verify that the maximum pressure (up to 210 bar, model-dependent) and flow rate (up to 3 l/min) meet your system's demands.
+*   **Duty Cycle:**  Assess if the intermittent duty cycle aligns with your application's operational profile.
+*   **Fluid Compatibility:** Ensure your hydraulic fluid is compatible with the unit's specifications.
+*   **Physical Space:** Confirm that the dimensions (see section 4) fit your installation constraints.
+*   **Installation Orientation:**  Choose a model that supports your desired installation orientation (vertical or horizontal).
+*   **Valve Requirements:** Select 'H' (lifting) version when valves are needed.
+
+**Important Note:**  Refer to the separate assembly instructions (B 6025) for detailed information on intended use, operation, maintenance, and assembly.
+
+
+Document: D6418-en.pdf
+
+Summary: Here's a summary of the HAWE Hydraulik POH/PIH proportional directional spool valve specification, focusing on key features for decision-making:
+
+**Product Overview:**
+
+The HAWE Hydraulik POH/PIH series are **proportional 4/3-way directional spool valves** designed to control the direction and speed of hydraulic actuators.  They are available in **NG6 (CETOP 3) and NG10 (CETOP 5) standard connection patterns** for manifold mounting. The valves are **directly actuated** providing infinitely adjustable control.
+
+**Key Features for Decision-Making:**
+
+*   **Types:**
+    *   **POH:**  Without displacement transducer.
+    *   **PIH:** With displacement transducer and center-position signal for precise control.
+
+*   **Flow Rate (Qmax):**
+    *   **PC06 (POH/PIH):** Options for 6, 13, 17, or 24 l/min.
+    *   **PC10 (PIH):** Options for 25 or 50 l/min.
+
+*   **Pressure:**
+    *   **Maximum Operating Pressure:** 350 bar (P, A, B ports).
+    *   **Maximum Return Pressure (T port):** 180 bar.
+    *   **Maximum pressure difference between two ports is 100 bar.**
+
+*   **Electrical:**
+    *   **Solenoid Voltage:** 12 V DC
+    *   **Electrical Connection:** EN 175 301-803 A (MSD 3-309 connector).
+    *   **Protection Class:** IP65 (with proper connection).
+
+*   **Sizes:**
+    *   **PC06:** Smaller size, typically used with POH and PIH options.
+    *   **PC10:** Larger size, only used with PIH option.
+
+*   **Displacement Transducer (PIH only):**
+    *   Nominal voltage 24V DC
+    *   Provides feedback for accurate spool positioning.
+    *   Offers a center-position signal output.
+
+*   **Hydraulic Fluid:**
+    *   Compatible with hydraulic fluids according to DIN 51 524 Parts 1 to 3; ISO VG 10 to 68 according to DIN ISO 3448.
+    *   Also compatible with biologically degradable hydraulic fluids type HEES (synthetic ester) at operating temperatures up to approx. +70°C.
+
+*   **Mounting:** Manifold mounting.
+
+*   **Weight:** PC06 (POH) = 1.7 kg, PC06 (PIH) = 2.5 kg, PC10 (PIH) = 6.7 kg
+
+**In summary, this valve is suitable for applications requiring proportional control of hydraulic actuators with a maximum pressure of 350 bar and flow rates up to 50 l/min, the PIH version is more appropriate for high precision applications due to the displacement transducer.**
+
+
+Document: D7280-en.pdf
+
+Summary: Here's a summary of the HAWE Hydraulik air-driven hydraulic pump/power pack type LP, focusing on key features to aid in decision-making:
+
+**Overview:**
+
+The HAWE LP series is an air-driven, reciprocating plunger pump designed to amplify pneumatic pressure into high-pressure hydraulic power. It is suitable for permanent, short-period, intermittent operation, and continuous operation with intermittent loads (S1, S2, S3, S6). It is available as a single pump, a cover plate version (for customer-supplied tanks), or a hydraulic power pack with integrated tank. The pump's flow rate adjusts based on air pressure and hydraulic counter-pressure, automatically restarting when pressure drops.
+
+**Key Features and Specifications:**
+
+*   **Operating Pressure:** Up to 700 bar hydraulic, with a maximum of 10 bar pneumatic input.
+*   **Displacement Volume:** Up to 29 cm3 per double stroke (depending on the specific model).
+*   **Delivery Flow Rate:** Up to 12 l/min (depending on model and operating conditions).
+*   **Tank Volume:** Available in tank sizes up to 34 liters (usable volume varies). Cover plate versions exist for custom tank integration.
+*   **Air-Side Seals:** PTFE seals for low friction, high oil delivery, good temperature resistance and low wear.
+*   **Pump Versions:** Single pump (for separate system integration), cover plate (for mounting on a customer-supplied tank), and complete hydraulic power pack with integrated tank.
+*   **Operation:** suitable for operation in potentially explosive areas(ATEX), requires appropriate grounding, Start/stop implemented via pump.
+*   **Available Modules**: Different pipe modules and intake modules are available with variable connections.
+*   **Hydraulic Fluid Compatibility:** Suitable for various hydraulic fluids, including mineral oil-based (DIN 51524) and biodegradable types (HEPG, HEES), within specified viscosity and temperature ranges.
+*   **Mounting:** Vertical (tank/cover plate versions), or any orientation (single pump).
+*   **Connections:** Standard hydraulic and pneumatic ports for easy integration.
+*   **Options:**
+    *   Level switches (N/C or N/O) for monitoring fluid levels in tank versions.
+    *   Level gauges for visual fluid level indication in tank versions.
+    *   Pressure port/suction port location (rotatable for flexible installation).
+    *   Pressurized suction side option (for LP 125-10 and LP 160-10), max 10 bar.
+    *   ATEX approval for potentially explosive environments (single pump only, requires grounding).
+*   **Accessories**: Connection blocks, valve banks.
+
+**Decision-Making Considerations:**
+
+*   **Pressure and Flow Requirements:** Select a model (LP 80, LP 125, LP 160) and plunger size based on your specific pressure and flow needs. Characteristic curves in the document provide performance data at different air pressures and hydraulic loads.
+*   **Tank Integration:** Decide whether you need an integrated tank (hydraulic power pack), or prefer to use a customer-supplied tank (cover plate version) or integrate just the pump into an existing system (single pump).
+*   **Operating Environment:** If operating in a hazardous environment, consider the ATEX-approved version (single pump) and ensure proper grounding.
+*   **Fluid Compatibility:** Ensure the selected hydraulic fluid is compatible with the pump's seals and operating temperature range.
+*   **Control and Monitoring:**  Consider options like level switches and connection blocks with integrated valves for system control and monitoring.
+
+**In summary, the HAWE LP series offers a versatile solution for generating high-pressure hydraulic power from compressed air. Selecting the right model and options depends on your specific pressure, flow, integration, and environmental requirements.**
+
+
+Document: D7451_CWPN-en.pdf
+
+Summary: Here's a summary of the HAWE Hydraulik CWPN Directional Spool Valve, designed to help you quickly assess its suitability for your needs:
+
+**Overview:**
+
+The HAWE CWPN is a directly actuated, binary (on/off) directional spool valve used to control the direction and speed of hydraulic actuators (single and double-acting cylinders). It's designed for manifold mounting with a standard NG 6 (CETOP 03) connection pattern, making it universally usable and compatible with HAWE valve banks, compact power packs, and customer-specific manifolds.
+
+**Key Features:**
+
+*   **Type:** Directional Spool Valve
+*   **Nominal Size:** NG 6 (CETOP 03)
+*   **Maximum Operating Pressure:** 350 bar (ports P, A, B)
+*   **Maximum Flow Rate:** 60 l/min (Note: May be lower depending on pressure. See characteristic lines in documentation)
+*   **Configurations:** Available as 4/3-way or 4/2-way valve.
+*   **Actuation Options:**
+    *   **Electrical:** Standard, with manual override, or with soft-shift function (for slower switching and reduced shock)
+    *   **Manual:** Optional manual override available on either A-side or B-side, depending on the circuit symbol.
+*   **Additional Valve Options (in port P):**
+    *   Orifice: Various orifice sizes (0.8 mm to 2.0 mm) for flow control.
+    *   Check Valve: Prevents backflow in the pump line.
+*   **Solenoid Voltage Options:** Wide range of DC and AC voltages available with various connector types and protection levels (IP65, IP67, IP69k).
+*   **Hydraulic Fluid Compatibility:** Suitable for mineral oil-based fluids (DIN 51524 Parts 1-3, ISO VG 10-68) and biodegradable fluids (HEPG, HEES) up to +70°C. NOT suitable for HETG (rapeseed oil) and water-glycol solutions (HFA, HFC).
+*   **Operating Temperature:** -40 to +80°C (fluid temperature -25 to +80°C). Pay attention to viscosity range
+*   **Cleanliness Level:** Requires hydraulic fluid cleanliness level of ISO 4406 20/17/14.
+*   **Mounting:** Designed for manifold mounting using standard hole pattern.
+*   **Materials:** Steel/cast Zn-Ni coated body, electro-galvanised solenoids.
+*   **Weight:** Approximately 1.8-2.0 kg depending on circuit symbol. Manual actuation adds approximately 0.6 kg.
+
+**Important Considerations:**
+
+*   **Pressure/Flow Relationship:** The maximum achievable flow rate can be limited by the operating pressure. Consult the characteristic lines in the full documentation for details.
+*   **Fluid Compatibility:** Ensure the hydraulic fluid is compatible with the valve materials and operating temperatures.
+*   **Cleanliness:** Maintain proper hydraulic fluid cleanliness to prevent damage and ensure reliable operation.
+*   **Safety:** Follow all safety guidelines and warnings in the documentation during installation, operation, and maintenance.
+
+**In short, this valve is a versatile, modular solution for controlling hydraulic actuators in a variety of industrial applications, particularly well-suited for machine tools, wind turbines, solar power plants, and general industrial hydraulics.** Choose the appropriate options for actuation, circuit symbol, voltage, and additional valves to match your specific system requirements.
+
+
+Document: D7918VIC-en.pdf
+
+Summary: Here's a summary of the CLHV-C load-holding valve specification, focusing on key features for decision-making:
+
+**Product Overview:**
+
+The HAWE Hydraulik CLHV-C is a screw-in type load-holding valve designed to prevent uncontrolled dropping of loads on cylinders or motors.  It is suitable for applications with low to medium oscillation tendencies, particularly with proportional directional spool valves like PSL and PSV series.  It's available with return pressure compensation and spring chamber relief.
+
+**Key Features & Specifications:**
+
+*   **Function:** Prevents loads from dropping uncontrollably using a pre-set pressure higher than the maximum expected load. A hydraulic piston controls the valve opening for desired lowering speed.
+*   **Mounting:** Screw-in cartridge design allows installation in manifolds, pipes, or directly on cylinders/motors.
+*   **Pressure Rating:** Maximum pressure setting of 350 bar. Maximum Load Pressure is 320 bar. The pressure setting should be at least 30% higher than the maximum load pressure.
+*   **Flow Rate:** Available in four sizes, with maximum flow rates ranging from 4 lpm to 320 lpm (depending on the model). See table 2 in the document for the exact flow rate for each model.
+*   **Sizes & Bore Holes:** Available in sizes CLHV 2, CLHV 3, CLHV 5 and CLHV 7, with bore holes 2UNF, 3UNF, T11A, 4UNF, T2A and 6UNF.
+*   **Control Behavior:** Various geometric control behaviors are available (3:1, 4:1, 5:1, 8:1, 9:1, 10:1), influencing the pilot ratio and responsiveness. See Table 3 in the document for details on which control behaviors are compatible with what bore holes.
+*   **Return Pressure Dependence:** Available in normal (undischarged), return pressure compensated, and discharged (atmospheric) versions, impacting how return pressure affects the pressure setting. Note that for the "Normal" version, the return pressure at port 2 is added to the pressure setting with (1 + pilot ratio) x return pressure.
+*   **Adjustability:** Can be fixed (non-adjustable), tool adjustable or tool adjustable with adjustment protection cap.
+*   **Seal Material:** Standard HNBR seals. FKM seals (PYD coding) are available on request.
+*   **Hydraulic Fluid:** Compatible with hydraulic oil per DIN 51 524 (parts 1-3) or ISO VG 10-68. Also suitable for biodegradable fluids (HEPG and HEES) up to +70°C. Requires cleanliness level ISO 4406 19/17/14.
+*   **Temperature Range:** Ambient temperature: -40°C to +50°C, Oil temperature: -25°C to +80°C.
+
+**Intended Applications:**
+
+*   Cranes
+*   Construction Machines
+*   Lifting Devices
+*   Agricultural Machinery
+
+**To determine suitability:**
+
+1.  **Confirm the required flow rate** is within the valve's capabilities (refer to Table 2).
+2.  **Verify the required pressure setting** aligns with the adjustable range offered (refer to Table 5).
+3.  **Select the appropriate control behavior** based on application responsiveness needs (refer to Table 3).
+4.  **Choose the correct return pressure dependence** option for the specific hydraulic circuit (refer to Table 4).
+5.  **Ensure hydraulic fluid compatibility** and maintain cleanliness levels.
+6.  **Check the correct bore hole** is chosen for the application.
+
+This summary provides a concise overview of the CLHV-C load-holding valve's key features and specifications, enabling informed decisions about its suitability for various hydraulic applications. Remember to consult the full document for detailed dimensional drawings, mounting information, and other important considerations before installation and operation.
+
+
+Document: D7961_K_DIN-en.pdf
+
+Summary: Here's a summary of the K61N-DIN fixed displacement axial piston pump, designed to help you determine if it suits your needs:
+
+**Overview:**
+
+The HAWE K61N-DIN is a **fixed displacement axial piston pump** designed for **open circuit mobile hydraulic systems**, primarily for installation on commercial vehicle power take-offs. It operates on the bent axis principle, providing a **constant flow rate at a given speed.**
+
+**Key Features and Benefits:**
+
+*   **Nominal Pressure:** Maximum 400 bar.
+*   **Displacement Volume:** Available in various sizes from 12.6 cm3/rev to 108.0 cm3/rev. This determines the flow rate for a given RPM. See table below.
+*   **Optimized Power-to-Weight Ratio:** Efficient design for mobile applications.
+*   **High Speed:** Suitable for high-speed operation (up to 3000 min-1 briefly, 1600-2300 min-1 continuously depending on size).
+*   **Variety of Shaft and Flange Options:** Different shaft and flange versions are available to suit different installation requirements.
+*   **Smooth Running:** Designed for smooth operation across the entire speed range.
+*   **Low Heat Generation:** Efficient design minimizes heat buildup.
+*   **Rotation Direction:** Available in clockwise (R) and anti-clockwise (L) rotations, reversible by turning the connection cover.
+*   **Mounting:** Mounting flange according to ISO 7653
+*   **Hydraulic Fluid Compatibility:** Suitable for mineral oil-based hydraulic fluids (DIN 51 524 Parts 1-3, ISO VG 10-68) and biologically degradable fluids (HEPG, HEES), with temperature limitations for the latter.
+*   **Filtration:** Requires hydraulic fluid cleanliness level of ISO 4406 18/16/13.
+*   **Accessories:** Suction intakes and bypass valves are available (ordered separately).
+
+**Available Sizes and Flow Rates (at specified speeds):**
+
+| Coding    | Displacement Volume (cm3/rev) | Flow rate at 500 min-1 (l/min) | Flow rate at 1000 min-1 (l/min) | Flow rate at 1500 min-1 (l/min) |
+| :-------- | :---------------------------- | :----------------------------- | :------------------------------ | :------------------------------ |
+| K61N-012 | 12.6                         | 6                              | 13                               | 19                               |
+| K61N-017 | 17.0                         | 9                              | 17                               | 26                               |
+| K61N-025 | 25.4                         | 13                             | 25                               | 38                               |
+| K61N-034 | 34.2                         | 17                             | 34                               | 51                               |
+| K61N-040 | 41.2                         | 21                             | 41                               | 62                               |
+| K61N-047 | 47.1                         | 24                             | 47                               | 71                               |
+| K61N-056 | 56.0                         | 28                             | 57                               | 85                               |
+| K61N-064 | 63.6                         | 32                             | 64                               | 95                               |
+| K61N-084 | 83.6                         | 42                             | 84                               | 125                              |
+| K61N-108 | 108.0                        | 54                             | 108                              | 162                              |
+
+**Intended Applications:**
+
+*   Municipal trucks
+*   Fire trucks
+*   Loading cranes and elevating work platforms
+*   Tipper trucks and skip trucks
+*   Suction dredgers and sewer cleaning vehicles
+
+**Important Considerations:**
+
+*   **Installation:** Should be performed by trained personnel, ensuring cleanliness. Avoid installation above the tank.
+*   **Hydraulic Fluid:** Use appropriate fluid, maintain cleanliness, and avoid mixing different fluid types. Filtration is crucial.
+*   **Suction Pressure:** Absolute suction pressure must not fall below 0.85 bar.
+*   **Pressure Relief:** A system pressure-limiting valve is required to prevent exceeding the maximum system pressure.
+*   **Maintenance:** Primarily maintenance-free, but requires regular visual inspections for leaks and cleaning.
+
+**To Decide if This Pump is Right for You:**
+
+1.  **Determine Your Required Flow Rate:** Calculate the necessary flow rate based on the speed and cylinder/motor requirements of your hydraulic system. Choose a pump displacement volume that provides the desired flow at your operating RPM.
+2.  **Check Pressure Requirements:** Ensure the 400 bar nominal pressure meets or exceeds your system's maximum pressure demands.
+3.  **Consider Installation Space:** Review the pump dimensions to confirm it fits within your vehicle's available space.
+4.  **Select Accessories:** Based on your specific application, determine if you need suction intakes or bypass valves.
+5.  **Verify Shaft/Flange Compatibility:** Choose a shaft and flange option that matches your power take-off or drive mechanism.
+
+
+Document: D7964-en.pdf
+
+Summary: Here's a summary of the HAWE Hydraulik C40V variable displacement axial piston pump, designed to help you decide if it fits your needs:
+
+**Core Function:** This pump adjusts its geometric output volume from maximum to zero, thus varying the flow rate supplied to connected hydraulic consumers. It's intended for open-circuit hydraulic systems in mobile applications.
+
+**Key Features & Benefits:**
+
+*   **Variable Displacement:** Adapts flow rate to demand, improving efficiency.
+*   **Swash Plate Principle:** Operates on this proven design for reliable performance.
+*   **Pressure:** Nominal pressure of 280 bar, peak pressure of 320 bar.
+*   **Displacement Volumes:** Available in 28.7, 46.5, 86.1, and 103.5 cm³/rev.
+*   **Controller Options:** A broad range of controllers are available, including Load-Sensing (LS0DA, LS2DA, LS0DE, LS2DE), Pressure control (DF-DA, DE), Flow Control (VE), and Power Control (LR). These allow for tailored control strategies (e.g., constant pressure, constant flow, load-sensing). Electrically operated controllers are available.
+*   **Thru-Shaft Compatibility:** Can be configured for thru-shaft applications, allowing for tandem pump arrangements.
+*   **High Self-Suction Speed:** Facilitates reliable operation.
+*   **Compact Design & Optimized Power-to-Weight Ratio:** Saves space and weight.
+*   **Rotation Direction:** Clockwise or anti-clockwise options.
+*   **Flange and shaft options**: Variety of options to connect to different equipment.
+
+**Controller Types and what they do:**
+
+*   **Load-Sensing (LS0DA/LS2DA/LS0DE/LS2DE):** Generate a variable, speed-independent flow rate. Adapt the displacement volume to the required flow rate and regulate a constant difference between load pressure and pump pressure. Some controllers also include pressure limitation and additional LS relief. LS0DE/LS2DE also have electro-proportional pressure control, which can be used to supply working functions and fan simultaneously.
+*   **Pressure Control (DF-DA/DE):** Reduce swivel angle of pump and regulate a constant pressure level when the pump pressure exceeds set value. DE types use electrical signal for proportional adjustment of pressure.
+*   **Flow Controller (VE):** Electro-proportional flow controller generating a variable flow rate depending on speed. Adjusts geometric displacement of the pump based on electrical input signal. Only available with rising characteristic line and in combination with pressure controller.
+*   **Power Controller (LR):** Reduces the pump's swivel angle when the product of displacement volume times pressure exceeds a set value, protecting the drive shaft, motor, or gearbox from overloading. Only available in combination with a pressure- or load-sensing controller.
+
+**Intended Applications:**
+
+*   Forestry and Agricultural Machinery
+*   Municipal Trucks
+*   Construction Machines
+*   Fan Control Systems
+*   Lifting Platforms
+
+**Important Considerations (Based on the Full Document):**
+
+*   **Hydraulic Fluid:** Use appropriate fluid per DIN 51 524 (ISO VG 10 to 68). Maintain viscosity and temperature within specified ranges. Biologically degradable fluids are also suitable.
+*   **Cleanliness:** Maintain hydraulic fluid cleanliness per ISO 4406 19/17/14 to prevent damage.
+*   **Installation:** Mount with appropriate fittings, observing tightening torques. Consider suction line routing and drain line placement.
+*   **Priming & Bleeding:** Fill the pump with hydraulic fluid and bleed it before initial use to prevent damage.
+*   **Pressure Limiting Valve:** Install a system pressure-limiting valve in the pressure line to prevent exceeding maximum system pressure.
+
+**In summary, the C40V is a versatile axial piston pump suitable for a wide range of mobile hydraulic applications where variable flow control and efficient operation are required. The extensive controller options allow for precise tailoring of the pump's behavior to the specific application demands.**
+
+

@@ -25,6 +25,7 @@ model = genai.GenerativeModel("gemini-2.0-flash")
 def get_document_id(user_query: str) -> list:
     """Determine the most relevant document based on the user query"""
     summaries_text = "\n".join([f"{k}: {v}" for k, v in document_summaries.items()])
+    
     prompt = f"""
     You are a B2B sales agent. Given the summaries below, select the most relevant product IDs (one or more) for the customer's inquiry.
 

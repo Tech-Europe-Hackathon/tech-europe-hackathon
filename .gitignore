@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignoriere Python Cache und Bytecode-Dateien
 __pycache__/
 *.py[cod]
@@ -38,3 +39,6 @@ node_modules/
 
 package-lock.json
 package.json
+=======
+ggl_api_key.txt
+>>>>>>> document_summaries
