@@ -3,58 +3,44 @@ import smtplib
 import email
 from email.message import EmailMessage
 import time
-import re
+import os
 import requests
 
-# E-Mail-Konfiguration
-IMAP_SERVER = "imap.mail.de"
-SMTP_SERVER = "smtp.mail.de"
-EMAIL_ADDRESS = "raphaelhauser@mail.de"
-PASSWORD = "!Et32cNdzdH9Jz4"
+# Secure credentials using environment variables (recommended)
+IMAP_SERVER = os.getenv("IMAP_SERVER", "imap.mail.de")
+SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.mail.de")
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS", "raphaelhauser@mail.de")
+PASSWORD = os.getenv("EMAIL_PASSWORD", "!Et32cNdzdH9Jz4")
+
+# Flask Chatbot API URL
+FLASK_ENDPOINT_URL = "http://127.0.0.1:5001/chat"
 
 def read_unseen_emails():
+    """Fetch unseen emails from the inbox."""
     with imaplib.IMAP4_SSL(IMAP_SERVER) as mail:
-        mail.login(EMAIL_ADDRESS, PASSWORD)
-        mail.select('inbox')
+        try:
+            mail.login(EMAIL_ADDRESS, PASSWORD)
+            mail.select('inbox')
 
-        status, data = mail.search(None, '(UNSEEN)')
-        mail_ids = data[0].split()
+            status, data = mail.search(None, '(UNSEEN)')
+            mail_ids = data[0].split()
 
-        emails = []
-        for mail_id in mail_ids:
-            status, msg_data = mail.fetch(mail_id, '(RFC822)')
-            msg = email.message_from_bytes(msg_data[0][1])
-            emails.append(msg)
-        return emails
+            emails = []
+            for mail_id in mail_ids:
+                status, msg_data = mail.fetch(mail_id, '(RFC822)')
+                msg = email.message_from_bytes(msg_data[0][1])
+                emails.append(msg)
 
-def trigger_flask_endpoint(user_query: str):
-    import requests
+            return emails
+        except Exception as e:
+            print(f"Error reading emails: {e}")
+            return []
 
-    endpoint_url = "http://127.0.0.1:5000/chat"
-
-    payload = {"query": user_query}
-    try:
-        response = requests.post(endpoint_url, json=payload)
-        response.raise_for_status()
-        result = response.json()
-        print(f"Response from Flask endpoint: {result}")
-        return result["text"]
-    except requests.RequestException as e:
-        print(f"Error calling endpoint: {e}")
-        return "There was an error contacting the internal service."
-
-def send_email_back(original_email):
-    reply = EmailMessage()
-
-    from_address = email.utils.parseaddr(original_email['From'])[1]
-
-    original_subject = original_email.get('Subject', '').replace("\n", "").replace("\r", "")
-    subject = "Re: " + original_subject
-
-    # Extract email content safely
+def extract_email_body(msg):
+    """Extract text from email (prefers plain text over HTML)."""
     body = ""
-    if original_email.is_multipart():
-        for part in original_email.walk():
+    if msg.is_multipart():
+        for part in msg.walk():
             content_type = part.get_content_type()
             content_disposition = str(part.get("Content-Disposition"))
 
@@ -62,24 +48,59 @@ def send_email_back(original_email):
                 payload = part.get_payload(decode=True)
                 if payload:
                     body = payload.decode(errors="ignore")
-                    break
+                    break  # Prefer plain text
     else:
-        body = original_email.get_payload(decode=True).decode(errors="ignore")
+        body = msg.get_payload(decode=True).decode(errors="ignore")
 
-    # Flask-Endpunkt aufrufen, um Antwort zu generieren
-    detailed_response = trigger_flask_endpoint(body)
+    return body.strip()
 
-    reply['From'] = EMAIL_ADDRESS
-    reply['To'] = from_address
-    reply['Subject'] = subject
-    reply.set_content(detailed_response)
+def trigger_flask_endpoint(user_query: str):
+    """Call the Flask chatbot endpoint with a query and return the response."""
+    payload = {"query": user_query}
 
-    with smtplib.SMTP_SSL(SMTP_SERVER, 465) as smtp:
-        smtp.login(EMAIL_ADDRESS, PASSWORD)
-        smtp.send_message(reply)
+    try:
+        response = requests.post(FLASK_ENDPOINT_URL, json=payload)
+        response.raise_for_status()
+        result = response.json()
+
+        return result.get("response", "No valid response from AI.")
+    except requests.RequestException as e:
+        print(f"Error contacting chatbot endpoint: {e}")
+        return "There was an error contacting our AI assistant."
+
+def send_email_back(original_email):
+    """Send an AI-generated reply to the sender of an email."""
+    try:
+        reply = EmailMessage()
+
+        from_address = email.utils.parseaddr(original_email['From'])[1]
+        original_subject = original_email.get('Subject', '').strip()
+        subject = f"Re: {original_subject}" if original_subject else "Re: Your Inquiry"
+
+        # Extract email content
+        email_body = extract_email_body(original_email)
+
+        # Generate AI response
+        detailed_response = trigger_flask_endpoint(email_body)
+
+        reply['From'] = EMAIL_ADDRESS
+        reply['To'] = from_address
+        reply['Subject'] = subject
+        reply.set_content(detailed_response)
+
+        # Send email
+        with smtplib.SMTP_SSL(SMTP_SERVER, 465) as smtp:
+            smtp.login(EMAIL_ADDRESS, PASSWORD)
+            smtp.send_message(reply)
+
+        print(f"Replied to email from {from_address}")
+
+    except Exception as e:
+        print(f"Error sending reply: {e}")
 
 def main():
-    INTERVAL_SECONDS = 30
+    """Continuously check for new emails and reply using AI responses."""
+    INTERVAL_SECONDS = 10
     print("Starting email polling...")
 
     try:
@@ -90,7 +111,6 @@ def main():
                 print(f"Found {len(emails)} unseen emails.")
                 for mail in emails:
                     send_email_back(mail)
-                    print(f"Replied to email from {mail['From']}")
             else:
                 print("No new emails found.")
 
