@@ -12,35 +12,52 @@ API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyDokn1k6Ij48FLTg5bQauestOvumCXM
 genai.configure(api_key=API_KEY)
 
 # Product summaries - these could be loaded from a database in a production app
-document_summaries = {
-    "1.1.1": "High-pressure valve for industrial applications.",
-    "1.1.2": "Enhanced high-pressure valve with improved sealing.",
-    "1.1.3": "High-pressure valve designed for extreme temperatures.",
-    "1.2.1": "Low-pressure valve for standard water systems.",
-}
+# document_summaries = {
+#     "1.1.1": "High-pressure valve for industrial applications.",
+#     "1.1.2": "Enhanced high-pressure valve with improved sealing.",
+#     "1.1.3": "High-pressure valve designed for extreme temperatures.",
+#     "1.2.1": "Low-pressure valve for standard water systems.",
+# }
+
+# Define file path
+summaries_file = "summaries.txt"
+
+# Read the entire file as a single string
+if os.path.exists(summaries_file):
+    with open(summaries_file, "r", encoding="utf-8") as file:
+        summaries_text = file.read()
+else:
+    summaries_text = ""  # Fallback in case the file is missing
+
+# Print for verification (optional)
+print(summaries_text)
+
 
 # Initialize Gemini model
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 def get_document_id(user_query: str) -> list:
     """Determine the most relevant document based on the user query"""
-    summaries_text = "\n".join([f"{k}: {v}" for k, v in document_summaries.items()])
-    
+    # summaries_text = "\n".join([f"{k}: {v}" for k, v in document_summaries.items()])
+
     prompt = f"""
     You are a B2B sales agent. Given the summaries below, select the most relevant product IDs (one or more) for the customer's inquiry.
-
+    - Each document is labeled as **"Document: [filename].pdf"**.
+    - Respond **only with the document filenames.pdf**, separated by commas if multiple documents are relevant.
+    
     Summaries:
     {summaries_text}
 
     Customer Inquiry:
     "{user_query}"
 
-    Reply ONLY with the relevant product ID.
+    Reply ONLY with the relevant product names.
     """
     response = model.generate_content(prompt)
     # return response.text.strip()
     # Extract IDs and return as a list
-    document_ids = [doc_id.strip() for doc_id in response.text.split(",") if doc_id.strip() in document_summaries]
+    # document_ids = [doc_id.strip() for doc_id in response.text.split(",") if doc_id.strip() in document_summaries]
+    document_ids = [doc_id.strip() for doc_id in response.text.split(",")]
     return document_ids
 
 def generate_detailed_response(pdf_paths: list, user_query: str) -> str:
@@ -110,8 +127,9 @@ def chat():
             )
         else:
             # Fallback if no PDFs exist
-            recommended_products = ", ".join([document_summaries.get(doc_id, "a product") for doc_id in document_ids])
-            response_text = f"Based on your inquiry, I recommend {recommended_products}. Would you like more detailed information?"
+            # recommended_products = ", ".join([document_summaries.get(doc_id, "a product") for doc_id in document_ids])
+            # response_text = f"Based on your inquiry, I recommend {recommended_products}. Would you like more detailed information?"
+            response_text = f"Based on your inquiry, I recommend a product. Would you like more detailed information?"
         
         return jsonify({
             "text": response_text,
