@@ -30,7 +30,7 @@ else:
     summaries_text = ""  # Fallback in case the file is missing
 
 # Print for verification (optional)
-print(summaries_text)
+# print(summaries_text)
 
 
 # Initialize Gemini model
