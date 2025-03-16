@@ -26,7 +26,7 @@ def get_document_id(user_query: str) -> str:
     """Determine the most relevant document based on the user query"""
     summaries_text = "\n".join([f"{k}: {v}" for k, v in document_summaries.items()])
     prompt = f"""
-    You are a B2B sales agent. Given the summaries below, select the most relevant product ID for the customer's inquiry.
+    You are a B2B sales agent. Given the summaries below, select the most relevant product IDs (one or more) for the customer's inquiry.
 
     Summaries:
     {summaries_text}
@@ -37,7 +37,10 @@ def get_document_id(user_query: str) -> str:
     Reply ONLY with the relevant product ID.
     """
     response = model.generate_content(prompt)
-    return response.text.strip()
+    # return response.text.strip()
+    # Extract IDs and return as a list
+    document_ids = [doc_id.strip() for doc_id in response.text.split(",") if doc_id.strip() in document_summaries]
+    return document_ids
 
 def generate_detailed_response(pdf_path: str, user_query: str) -> str:
     """Generate a response based on PDF content and user query"""
