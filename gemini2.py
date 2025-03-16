@@ -24,6 +24,9 @@ else:
 # Initialize Gemini model
 model = genai.GenerativeModel("gemini-2.0-flash")
 
+# Maintain chat history
+chat_history = []
+
 def get_document_id(user_query: str) -> list:
     """Determine the most relevant document based on the user query"""
     prompt = f"""
@@ -44,7 +47,7 @@ def get_document_id(user_query: str) -> list:
     document_ids = [doc_id.strip() for doc_id in response.text.split(",")]
     return document_ids
 
-def generate_detailed_response(pdf_paths: list, user_query: str) -> str:
+def generate_detailed_response(pdf_paths: list, user_query: str, history: list) -> str:
     """Generate a response based on multiple PDF contents and user query."""
     try:
         pdf_contents = []
@@ -61,19 +64,24 @@ def generate_detailed_response(pdf_paths: list, user_query: str) -> str:
 
         if not pdf_contents:
             return "I couldn't find any relevant documents. Would you like to speak with a sales representative?"
+        
+        # Append the history to the prompt
+        history_text = "\n".join([f"Customer: {entry['user']}\nAI: {entry['ai']}" for entry in history])
 
         prompt = f"""
         You are a professional B2B sales agent. Provide a concise, detailed response directly addressing the customer's inquiry below, using only relevant information from the attached documents.
 
-        - Speak naturally and informatively, as if addressing a customer in a business conversation.
+        You are a professional B2B sales agent. Provide a concise, detailed response addressing the customer's inquiry below, using only relevant information from the attached documents.
+
+        - Be conversational and avoid repeating phrases like "Hello, I am an AI sales agent." 
+        - Speak naturally, as if you're engaging in an ongoing conversation.
         - Reference the specific document(s) where the information is sourced.
-        - Begin with a brief introduction of the product(s), followed by detailed features and benefits.
-        - Include all products from the attached documents unless the customer inquiry specifies otherwise.
-        - Identify yourself as an AI sales agent at the start of your response.
-        - Adapt the response style to the communication format (e.g., chat or email).
+        - Focus on answering the query, avoiding unnecessary introductory statements.
         - If the inquiry is vague, offer a balanced overview of all relevant products.
         - Do not use markdown or special formatting.
 
+        Previous Conversation History:
+        {history_text}
 
         Customer Inquiry:
         "{user_query}"
@@ -89,7 +97,7 @@ def generate_detailed_response(pdf_paths: list, user_query: str) -> str:
     except Exception as e:
         return f"I'm having trouble processing your request due to {str(e)}. Please try again or contact our sales team."
 
-def process_query(user_query: str):
+def process_query(user_query: str, history: list):
     """Process the user query and print results"""
     print(f"User Query: {user_query}")
     
@@ -108,7 +116,8 @@ def process_query(user_query: str):
         if pdf_file_paths:
             response_text = generate_detailed_response(
                 pdf_paths=pdf_file_paths,
-                user_query=user_query
+                user_query=user_query,
+                history=history
             )
         else:
             response_text = "Based on your inquiry, I recommend a product. Would you like more detailed information?"
@@ -116,6 +125,12 @@ def process_query(user_query: str):
         print("\nResponse:")
         print(response_text)
         print("\nReferenced Documents:", document_ids)
+
+        # Save the query and response to history
+        history.append({
+            "user": user_query,
+            "ai": response_text
+        })
 
     except Exception as e:
         print(f"Error processing request: {e}")
@@ -130,7 +145,7 @@ if __name__ == "__main__":
     ]
 
     for query in test_queries:
-        process_query(query)
+        process_query(query, chat_history)
         print("-" * 50)  # Separator between queries
 
     # Optional: Interactive mode
@@ -138,5 +153,5 @@ if __name__ == "__main__":
         user_input = input("\nEnter your query (or 'quit' to exit): ")
         if user_input.lower() == 'quit':
             break
-        process_query(user_input)
+        process_query(user_input, chat_history)
         print("-" * 50)
