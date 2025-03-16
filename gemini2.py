@@ -28,8 +28,8 @@ def get_document_id(user_query: str) -> list:
     """Determine the most relevant document based on the user query"""
     prompt = f"""
     You are a B2B sales agent. Given the summaries below, select the most relevant product IDs (one or more) for the customer's inquiry.
-    - Each document is labeled as **"Document: [filename].pdf"**.
-    - Respond **only with the document filenames.pdf**, separated by commas if multiple documents are relevant.
+    - Each document is labeled as "Document: [filename].pdf".
+    - Respond only with the document filenames.pdf, separated by commas if multiple documents are relevant.
     
     Summaries:
     {summaries_text}
