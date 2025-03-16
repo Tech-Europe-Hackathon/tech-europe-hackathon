@@ -21,5 +21,10 @@ To start the backend, you need to run both `emailPolling.py` and `gemini2.py`.
    python gemini2.py
    ```
 
+## Benefits
+- **Higher Sales-Lead Generation**: Faster and more accurate responses help convert prospects into clients.
+- **Improved Customer Support Response Times**: Immediate and precise answers enhance customer satisfaction.
+- **Reduced Friction Between Teams/Departments**: Streamlined communication minimizes misunderstandings and delays.
+
 Both scripts should be running simultaneously for the backend to function correctly.
 
